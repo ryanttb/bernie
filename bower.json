@@ -1,0 +1,27 @@
+{
+  "name": "bernie",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ryanttb/bernie",
+  "authors": [
+    "Ryan Morrison~Westphal <ryan@trippingthebits.com>"
+  ],
+  "description": "Bulk create URNs with ERNIE.",
+  "main": "index.html",
+  "keywords": [
+    "ernie",
+    "library",
+    "harvard"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

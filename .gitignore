@@ -1,0 +1,6 @@
+# vim
+*.swp
+*.swo
+
+# bower
+bower_components
