@@ -14,10 +14,83 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   </head>
   <body>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>BERNIE</h1>
+        <p>BERNIE helps with bulk URN creation via source URLs</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label">PIN</label>
+          <div class="checkbox">
+            <label class="control-label checkbox-inline">
+              <input type="checkbox" name="restricted" value="on" aria-label="HUID/PIN required?" checked> HUID/PIN required?
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="status" class="control-label">Status</label>
+          <select name="status" id="status" class="form-control">
+            <option value="add">New</option>
+            <option value="update">Update</option>
+            <option value="withdraw">Withdraw</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="type" class="control-label">Type</label>
+          <select name="type" id="type" class="form-control">
+            <option value="hul.eresource" >E-resource</option>
+            <option value="hul.ebook">E-book</option>
+            <option value="hul.eother" >E-other</option>
+            <option value="hul.EBKPLL" >E-bookplates - large image</option>
+            <option value="hul.EBKPLT" >E-bookplates - thumbnail</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="control-label">Send notifications to</label>
+          <input type="email" name="email" id="email" value="lmorrison@law.harvard.edu" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+          <label for="urls" class="control-label" >Unique IDs &amp; URLs</label>
+          <p>Please paste <strong>tab-delimited*</strong> Unique ID/URL pairs, one per line.</p>
+          <small>* tab-delimited is the default when you highlight and copy a bunch of cells from Excel</small>
+          <textarea id="urls" class="form-control" rows="4">HeinCC	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cczecvd0001&id=1&collection=leebs&index=leebs
+HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1&collection=leebs&index=leebs</textarea>
+        </div>
+
+        <button id="prepare" type="button" class="btn btn-info">Prepare</button>
+
+        <section id="prepared">
+          <h2>Prepared Actions</h2>
+
+          <p>If the following does not look right, please check your selections and pasted data in the above form and then tap <strong>Prepare</strong> again.</p>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Unique ID</th>
+                <th>URL</th>
+                <th>URN</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </section>
+
+        <button id="go" type="submit" class="btn btn-primary">Go</button>
+      </form>
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
