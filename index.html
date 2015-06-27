@@ -23,6 +23,17 @@
     </div>
 
     <div class="container">
+
+      <div class="form-group">
+        <label for="urls" class="control-label" >Unique IDs &amp; URLs</label>
+        <p>Please paste <strong>tab-delimited*</strong> Unique ID/URL pairs, one per line.</p>
+        <small>* tab-delimited is the default when you highlight and copy a bunch of cells from Excel</small>
+        <textarea id="urls" class="form-control" rows="4">HeinCC	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cczecvd0001&id=1&collection=leebs&index=leebs
+HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1&collection=leebs&index=leebs</textarea>
+      </div>
+
+      <button id="prepare" type="button" class="btn btn-info">Prepare</button>
+
       <form class="form-horizontal">
         <div class="form-group">
           <label class="control-label">PIN</label>
@@ -54,19 +65,90 @@
         </div>
 
         <div class="form-group">
-          <label for="email" class="control-label">Send notifications to</label>
-          <input type="email" name="email" id="email" value="lmorrison@law.harvard.edu" class="form-control"> 
+          <label for="collection" class="control-label">Type</label>
+          <select name="collection" id="collection" class="form-control">
+            <option value=""></option>
+            <option value="GEN">General</option>
+            <option value="FREE">Unrestricted E-Books</option>
+            <option value="ABCCL">ABC-CLIO eBooks</option>	
+            <option value="ACCESS">Access Medicine and Surgery</option>
+            <option value="ASPDKB">Alexander Street Press Digital Karl Barth Library</option>
+            <option value="APABI">Apabi eBooks</option>
+            <option value="ASPCS">Astronomical Society of the Pacific Conference Series</option>
+            <option value="BIODHL">Biodiversity Heritage Library</option>
+            <option value="OVID">Books@Ovid</option>
+            <option value="BUCH">Buchwissenschaft</option>
+            <option value="CAMBK">Cambridge Books Online</option>
+            <option value="CAHIS">Cambridge Histories Online</option>
+            <option value="CHS">Center for Hellenic Studies</option>
+            <option value="CLACSO">CLACSO</option>
+            <option value="CORISLAN">Cornell: Islandica Series</option>
+            <option value="CRC">CRC Press</option>
+            <option value="EAISS">Early American Imprints, Series 2</option>
+            <option value="EBRARY">Ebrary ebooks</option>
+            <option value="EBSCO">EBSCOhost ebooks</option>
+            <option value="EDP">EDP Sciences -- E-Books</option>
+            <option value="ELSD">Elsevier eBooks</option>
+            <option value="ELBIO">Elsevier eBooks: Biochemistry, Genetics and Molecular Biology Collection</OPtion>
+            <option value="ELMED">Elsevier eBooks: Medicine</option>
+            <option value="FIRUP">Firenze University Press</option>
+            <option value="HECON">Handbook in Economics Series</option>
+            <option value="IAU">IAU symposium and colloquium proceedings series</option>
+            <option value="INTPM">Intelex: Past Masters</option>
+            <option value="KSI">Korean Studies Information -- bundled with print</option>
+            <option value="LNM">Lecture Notes in Mathematics</option>
+            <option value="MDCON">MDConsult</option>
+            <option value="MNHRHL">Martinus Nijhoff Human Rights and Humanitarian Law</option>
+            <option value="MNIL">Martinus Nijhoff International Law</option>
+            <option value="MIL">My iLibrary</option>
+            <option value="NAP">National Academies Press  -- Ebooks Bundled with Print</option>
+            <option value="NLIB">netLibrary</option>
+            <option value="NDACE">New Directions for Adult and Continuing Education Series</option>
+            <option value="NDCAD">New Directions for Child and Adolescent Development Series</option>
+            <option value="NDCC">New Directions for Community Colleges Series</option>
+            <option value="NDFE">New Directions for Evaluation Series</option>
+            <option value="NDHE">New Directions for Higher Education Series</option>
+            <option value="NDIR">New Directions for Institutional Research Series</option>
+            <option value="NDSS">New Directions for Student Services Series</option>
+            <option value="NDTL">New Directions for Teaching and Learning Series</option>
+            <option value="NDYD">New Directions for Youth Development Series</option>
+            <option value="OBSO">Oxford Biblical Studies Online</option>
+            <option value="OHOLAW">Oxford Handbooks Online: Law</option>
+            <option value="OHOREL">Oxford Handbooks Online: Religion</option>
+            <option value="ORO">Oxford Reference Online Premium Collection</option>
+            <option value="OSOBIO">Oxford Scholarship Online: Biology Collection</option>
+            <option value="OSOBUS">Oxford Scholarship Online: Business and Management</option>
+            <option value="OSOCLAS">Oxford Scholarship Online: Classical Studies Collection</option>
+            <option value="OSOECON">Oxford Scholarship Online: Economics and Finance Collection</option>
+            <option value="OSOLAW">Oxford Scholarship Online: Law</option>
+            <option value="OSOLING">Oxford Scholarship Online: Linguistics Collection</option>
+            <option value="OSOPHIL">Oxford Scholarship Online: Philosophy Collection</option>
+            <option value="OSOPC">Oxford Scholarship Online: Physics Collection</option>
+            <option value="OSOPUB">Oxford Scholarship Online: Public Health and Epidemiology Collection</option>
+            <option value="OSOREL">Oxford Scholarship Online: Religion Collection</option>
+            <option value="Palgrave">Palgrave Connect Education Collection</option>
+            <option value="R2ML">R2 Library - Medical E-books</option>
+            <option value="SAF">Safari Tech Books Online</option>
+            <option value="SAGE">Sage Publications -- Ebooks bundled with print</option>
+            <option value="SALEM">Salem Press</option>
+            <option value="SCHAUMS">Schaum's Course Outlines</option>
+            <option value="SPIE">SPIE Digital Library</option>
+            <option value="SPRGP">Springer Protocols</option>
+            <option value="STAT">StatRef</option>
+            <option value="HTI">Studies in Health Technology and Informatics</option>
+            <option value="TANDF">Taylor and Francis e-Books</option>
+            <option value="WCURP">Wiley Current Protocols</option>
+            <option value="WOB">Wiley Online Library Books</option>
+            <option value="MBC">Wiley Interscience Online Books -- Molecular Biology Collection</option>
+            <option value="MRW">Wiley Major Reference Works</option>
+            <option value="WORLDSCI">World Scientific</option>
+          </select>
         </div>
 
         <div class="form-group">
-          <label for="urls" class="control-label" >Unique IDs &amp; URLs</label>
-          <p>Please paste <strong>tab-delimited*</strong> Unique ID/URL pairs, one per line.</p>
-          <small>* tab-delimited is the default when you highlight and copy a bunch of cells from Excel</small>
-          <textarea id="urls" class="form-control" rows="4">HeinCC	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cczecvd0001&id=1&collection=leebs&index=leebs
-HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1&collection=leebs&index=leebs</textarea>
+          <label for="email" class="control-label">Send notifications to</label>
+          <input type="email" name="email" id="email" value="lmorrison@law.harvard.edu" class="form-control"> 
         </div>
-
-        <button id="prepare" type="button" class="btn btn-info">Prepare</button>
 
         <section id="prepared">
           <h2>Prepared Actions</h2>
@@ -76,9 +158,16 @@ HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Unique ID</th>
-                <th class="prepared-url">URL</th>
+                <th>
+                  Unique ID
+                  <input type="hidden" name="unique_ID" id="unique_ID" />
+                </th>
+                <th>
+                  URL
+                  <input type="hidden" name="URL" id="URL" />
+                </th>
                 <th>URN</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
