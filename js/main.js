@@ -57,6 +57,11 @@ $( function () {
     $( '#go' ).prop( 'disabled', false );
   } );
 
+  $( '#prepare-clear' ).click( function( ) {
+    $( '#urls' ).val( '' ).focus();
+    $( '#go' ).prop( 'disabled', true );
+  } );
+
   $( '#go' ).click( function( ) {
     $( this ).prop( 'disabled', true );
 
@@ -117,7 +122,7 @@ $( function () {
   }
 
   function flash( text ) {
-    $( '#prepare-flash' ).text( text ).show();
+    $( '#prepare-flash' ).text( text ).show()[ 0 ].scrollIntoView();
     return false;
   }
 } );
