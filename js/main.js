@@ -85,12 +85,12 @@ $( function () {
     var btn = $( this );
     var iframe = btn.prev( 'iframe' );
     
-    if ( btn.text() === 'Verify' ) {
+    if ( btn.text() === 'Hide' ) {
+      iframe.css( 'position', 'absolute' );
+      btn.text( 'Show ERNIE response' );
+    } else {
       iframe.css( 'position', 'static' );
       btn.text( 'Hide' );
-    } else {
-      iframe.css( 'position', 'absolute' );
-      btn.text( 'Verify' );
     }
 
     return false;
@@ -124,5 +124,9 @@ $( function () {
 
 function iframeLoad( iframe ) {
   $( iframe ).next( '.progress' ).remove();
-  $( '<a class="verify-iframe btn btn-info" href="#">Verify</a>' ).insertAfter( iframe );
+  $( '<a class="verify-iframe btn btn-info" href="#">Show ERNIE response</a>' ).insertAfter( iframe );
+
+  var urnCell = $( iframe ).closest( 'tr' ).find( '.prepared-urn' );
+  var urn = urnCell.text();
+  urnCell.html( '<a href="' + urn + '" target="_blank">' + urn + '</a>' );
 }
