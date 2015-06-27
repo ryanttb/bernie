@@ -1,4 +1,9 @@
 $( function () {
+  $( '#type' ).change( function( ) {
+    $( '#collection' ).val( '' );
+    $( '#collection' ).parent( '.form-group' ).toggle( $( this ).val() === 'hul.ebook' );
+  } );
+
   $( '#prepare' ).click( function( ) {
     var urls_src = $( '#urls' ).val();
 
