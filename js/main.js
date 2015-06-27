@@ -43,14 +43,33 @@ $( function () {
 
       var requestUrl = $( 'form' ).serialize();
       row.find( '.prepared-status' ).html( 
-        '<iframe width="96" height="48" src="' +
+        '<iframe src="' +
         'http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?' +
         requestUrl +
-        '"></iframe>'
+        '" onload="iframeLoad(this)"></iframe>' +
+        $( '.progress-template' ).html()
       );
 
     } );
 
     return false;
   } );
+
+  $( '#prepared' ).on( 'click', '.verify-iframe', function( ) {
+    var btn = $( this );
+    var iframe = btn.prev( 'iframe' );
+    
+    if ( btn.text() === 'Verify' ) {
+      iframe.css( 'position', 'static' );
+      btn.text( 'Hide' );
+    } else {
+      iframe.css( 'position', 'absolute' );
+      btn.text( 'Verify' );
+    }
+  } );
 } );
+
+function iframeLoad( iframe ) {
+  $( iframe ).next( '.progress' ).remove();
+  $( '<a class="verify-iframe btn btn-info" href="javascript:void();">Verify</a>' ).insertAfter( iframe );
+}
