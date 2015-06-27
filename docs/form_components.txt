@@ -1,0 +1,109 @@
+GET URL: http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?status=add&type=hul.eresource&unique_ID=HeinCCW&restricted=on&URL=http%3A%2F%2Fwww.heinonline.org%2FHOL%2FPage%3Fhandle%3Dhein.leebs%2Fcodcomw0001%26id%3D1%26collection%3Dleebs%26index%3Dleebs&collection=&email=lmorrison%40law.harvard.edu
+
+http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?
+  status=add &
+    select
+    values= add | update | withdrawl
+      <option value="add">New</option>
+      <option value="update">Update</option>
+      <option value="withdraw">Withdraw</option>
+  type=hul.eresource &
+    select
+    id=cat
+    values=
+      <option value="hul.ebook">E-book</option>
+      <option value="hul.eresource" >E-resource</option>
+      <option value="hul.eother" >E-other</option>
+      <option value="hul.EBKPLL" >E-bookplates - large image</option>
+      <option value="hul.EBKPLT" >E-bookplates - thumbnail</option>
+  unique_ID=HeinCCW &
+    input type=text
+  restricted=on &
+    input type=checkbox
+    (if unchecked, append https://login.eresources.law.harvard.edu/login?url= to url)
+
+  URL= EncodeURIComponent( url ) &
+  collection= &
+    select
+    values= 
+      <option value="GEN">General</option>
+      <option value="FREE">Unrestricted E-Books</option>
+      <option value="ABCCL">ABC-CLIO eBooks</option>	
+      <option value="ACCESS">Access Medicine and Surgery</option>
+      <option value="ASPDKB">Alexander Street Press Digital Karl Barth Library</option>
+      <option value="APABI">Apabi eBooks</option>
+      <option value="ASPCS">Astronomical Society of the Pacific Conference Series</option>
+      <option value="BIODHL">Biodiversity Heritage Library</option>
+      <option value="OVID">Books@Ovid</option>
+      <option value="BUCH">Buchwissenschaft</option>
+      <option value="CAMBK">Cambridge Books Online</option>
+      <option value="CAHIS">Cambridge Histories Online</option>
+      <option value="CHS">Center for Hellenic Studies</option>
+      <option value="CLACSO">CLACSO</option>
+      <option value="CORISLAN">Cornell: Islandica Series</option>
+      <option value="CRC">CRC Press</option>
+      <option value="EAISS">Early American Imprints, Series 2</option>
+      <option value="EBRARY">Ebrary ebooks</option>
+      <option value="EBSCO">EBSCOhost ebooks</option>
+      <option value="EDP">EDP Sciences -- E-Books</option>
+      <option value="ELSD">Elsevier eBooks</option>
+      <option value="ELBIO">Elsevier eBooks: Biochemistry, Genetics and Molecular Biology Collection</OPtion>
+      <option value="ELMED">Elsevier eBooks: Medicine</option>
+      <option value="FIRUP">Firenze University Press</option>
+      <option value="HECON">Handbook in Economics Series</option>
+      <option value="IAU">IAU symposium and colloquium proceedings series</option>
+      <option value="INTPM">Intelex: Past Masters</option>
+      <option value="KSI">Korean Studies Information -- bundled with print</option>
+      <option value="LNM">Lecture Notes in Mathematics</option>
+      <option value="MDCON">MDConsult</option>
+      <option value="MNHRHL">Martinus Nijhoff Human Rights and Humanitarian Law</option>
+      <option value="MNIL">Martinus Nijhoff International Law</option>
+      <option value="MIL">My iLibrary</option>
+      <option value="NAP">National Academies Press  -- Ebooks Bundled with Print</option>
+      <option value="NLIB">netLibrary</option>
+      <option value="NDACE">New Directions for Adult and Continuing Education Series</option>
+      <option value="NDCAD">New Directions for Child and Adolescent Development Series</option>
+      <option value="NDCC">New Directions for Community Colleges Series</option>
+      <option value="NDFE">New Directions for Evaluation Series</option>
+      <option value="NDHE">New Directions for Higher Education Series</option>
+      <option value="NDIR">New Directions for Institutional Research Series</option>
+      <option value="NDSS">New Directions for Student Services Series</option>
+      <option value="NDTL">New Directions for Teaching and Learning Series</option>
+      <option value="NDYD">New Directions for Youth Development Series</option>
+      <option value="OBSO">Oxford Biblical Studies Online</option>
+      <option value="OHOLAW">Oxford Handbooks Online: Law</option>
+      <option value="OHOREL">Oxford Handbooks Online: Religion</option>
+      <option value="ORO">Oxford Reference Online Premium Collection</option>
+      <option value="OSOBIO">Oxford Scholarship Online: Biology Collection</option>
+      <option value="OSOBUS">Oxford Scholarship Online: Business and Management</option>
+      <option value="OSOCLAS">Oxford Scholarship Online: Classical Studies Collection</option>
+      <option value="OSOECON">Oxford Scholarship Online: Economics and Finance Collection</option>
+      <option value="OSOLAW">Oxford Scholarship Online: Law</option>
+      <option value="OSOLING">Oxford Scholarship Online: Linguistics Collection</option>
+      <option value="OSOPHIL">Oxford Scholarship Online: Philosophy Collection</option>
+      <option value="OSOPC">Oxford Scholarship Online: Physics Collection</option>
+      <option value="OSOPUB">Oxford Scholarship Online: Public Health and Epidemiology Collection</option>
+      <option value="OSOREL">Oxford Scholarship Online: Religion Collection</option>
+      <option value="Palgrave">Palgrave Connect Education Collection</option>
+      <option value="R2ML">R2 Library - Medical E-books</option>
+      <option value="SAF">Safari Tech Books Online</option>
+      <option value="SAGE">Sage Publications -- Ebooks bundled with print</option>
+      <option value="SALEM">Salem Press</option>
+      <option value="SCHAUMS">Schaum's Course Outlines</option>
+      <option value="SPIE">SPIE Digital Library</option>
+      <option value="SPRGP">Springer Protocols</option>
+      <option value="STAT">StatRef</option>
+      <option value="HTI">Studies in Health Technology and Informatics</option>
+      <option value="TANDF">Taylor and Francis e-Books</option>
+      <option value="WCURP">Wiley Current Protocols</option>
+      <option value="WOB">Wiley Online Library Books</option>
+      <option value="MBC">Wiley Interscience Online Books -- Molecular Biology Collection</option>
+      <option value="MRW">Wiley Major Reference Works</option>
+      <option value="WORLDSCI">World Scientific</option>
+  email=lmorrison%40law.harvard.edu
+    input type=text
+
+RESPONSE:
+
+http://nrs.harvard.edu/urn-3:hul.eresource:HeinCFPCPRF
+
