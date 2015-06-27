@@ -66,10 +66,12 @@ $( function () {
       iframe.css( 'position', 'absolute' );
       btn.text( 'Verify' );
     }
+
+    return false;
   } );
 } );
 
 function iframeLoad( iframe ) {
   $( iframe ).next( '.progress' ).remove();
-  $( '<a class="verify-iframe btn btn-info" href="javascript:void();">Verify</a>' ).insertAfter( iframe );
+  $( '<a class="verify-iframe btn btn-info" href="#">Verify</a>' ).insertAfter( iframe );
 }
