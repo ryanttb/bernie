@@ -6,3 +6,11 @@ iframe {
   top: -16em;
   width: 24em;
 }
+
+.footer {
+  margin-top: 3em;
+}
+
+.footer .jumbotron {
+  margin-bottom: 0;
+}

@@ -4,6 +4,8 @@ $( function () {
     $( '#collection' ).parent( '.form-group' ).toggle( $( this ).val() === 'hul.ebook' );
   } );
 
+  getEmail();
+
   $( '#prepare' ).click( function( ) {
     var urls_src = $( '#urls' ).val();
 
@@ -69,6 +71,27 @@ $( function () {
 
     return false;
   } );
+
+  function getEmail() {
+    var hrefParts = window.location.href.split( '?' ),
+        queryParts,
+        paramParts;
+
+    if ( hrefParts.length >= 2 ) {
+      queryParts = hrefParts[1].split( '&' );
+
+      $.each( queryParts, function( i, value ) {
+        if ( value.indexOf( 'email' ) >= 0 ) {
+          paramParts = value.split( '=' );
+          if ( paramParts.length >= 2 ) {
+            $( '#email' ).val( paramParts[ 1 ] );
+          }
+          return false;
+        }
+      } );
+    }
+
+  }
 } );
 
 function iframeLoad( iframe ) {

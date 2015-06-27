@@ -28,8 +28,7 @@
         <label for="urls" class="control-label" >Unique IDs &amp; URLs</label>
         <p>Please paste <strong>tab-delimited*</strong> Unique ID/URL pairs, one per line.</p>
         <small>* tab-delimited is the default when you highlight and copy a bunch of cells from Excel</small>
-        <textarea id="urls" class="form-control" rows="4">HeinCC	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cczecvd0001&id=1&collection=leebs&index=leebs
-HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1&collection=leebs&index=leebs</textarea>
+        <textarea id="urls" class="form-control" rows="4"></textarea>
       </div>
 
       <button id="prepare" type="button" class="btn btn-info">Prepare</button>
@@ -147,7 +146,7 @@ HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1
 
         <div class="form-group">
           <label for="email" class="control-label">Send notifications to</label>
-          <input type="email" name="email" id="email" value="lmorrison@law.harvard.edu" class="form-control"> 
+          <input type="email" name="email" id="email" value="" class="form-control"> 
         </div>
 
         <div id="prepared">
@@ -185,9 +184,16 @@ HeinCDPS	http://www.heinonline.org/HOL/Page?handle=hein.leebs/cpydefprv0001&id=1
           </div>
         </div>
       </div>
-
     </div>
 
+    <footer class="footer">
+      <div class="jumbotron">
+        <div class="container">
+          <p>Thank you for using BERNIE!</p>
+        </div>
+      </div>
+    </footer>
+    
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
