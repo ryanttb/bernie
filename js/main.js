@@ -7,15 +7,36 @@ $( function () {
   getEmail();
 
   $( '#prepare' ).click( function( ) {
+    $( '.alert' ).hide();
+    $( '#go' ).prop( 'disabled', true );
+
     var urls_src = $( '#urls' ).val();
+
+    if ( !urls_src ) {
+      return flash( 'Please paste some Unique IDs and URLs' );
+    }
 
     var urls = urls_src.split( '\n' );
 
-    var preparedHtml = '';
-    var urlParts = '';
+    if ( urls.length == 0) {
+      return flash( 'Please paste some Unique IDs and URLs' );
+    }
+
+    var preparedHtml = '',
+        urlParts;
+
 
     $( urls ).each( function( ) {
+      if ( this.trim() === '' ) {
+        // ignore empty lines & continue
+        return true;
+      }
+
       urlParts = this.split( '\t' );
+
+      if ( urlParts.length !== 2 ) {
+        return flash( 'Could not correctly parse all lines, please check your data and tap Prepare again' );
+      }
 
       preparedHtml += '<tr>';
       preparedHtml += '<td class="prepared-uid">' + urlParts[ 0 ] + '</td>';
@@ -33,9 +54,12 @@ $( function () {
     } );
 
     $( '#prepared tbody' ).html( preparedHtml );
+    $( '#go' ).prop( 'disabled', false );
   } );
 
   $( '#go' ).click( function( ) {
+    $( this ).prop( 'disabled', true );
+
     $( '#prepared tbody tr' ).each( function( i ) {
       var row = $( this );
 
@@ -90,7 +114,11 @@ $( function () {
         }
       } );
     }
+  }
 
+  function flash( text ) {
+    $( '#prepare-flash' ).text( text ).show();
+    return false;
   }
 } );
 
