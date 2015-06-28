@@ -1,4 +1,7 @@
-GET URL: http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?status=add&type=hul.eresource&unique_ID=HeinCCW&restricted=on&URL=http%3A%2F%2Fwww.heinonline.org%2FHOL%2FPage%3Fhandle%3Dhein.leebs%2Fcodcomw0001%26id%3D1%26collection%3Dleebs%26index%3Dleebs&collection=&email=lmorrison%40law.harvard.edu
+GET URL (HUID): http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?status=add&type=hul.eresource&unique_ID=HeinCCW&restricted=on&URL=http%3A%2F%2Fwww.heinonline.org%2FHOL%2FPage%3Fhandle%3Dhein.leebs%2Fcodcomw0001%26id%3D1%26collection%3Dleebs%26index%3Dleebs&collection=&email=lmorrison%40law.harvard.edu
+
+GET URL  (law): http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?status=add&type=hul.eresource&unique_ID=LAWonlyURN&URL=https%3A%2F%2Flogin.eresources.law.harvard.edu%2Flogin%3Furl%3Dhttp%3A%2F%2Fwww.heinonline.org%2FHOL%2FPage%3Fhandle%3Dhein.leebs%2Fdistsovl0001%26id%3D1%26collection%3Dleebs%26index%3Dleebs+&collection=&email=lmorrison%40law.harvard.edu
+
 
 http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?
   status=add &
@@ -7,6 +10,7 @@ http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?
       <option value="add">New</option>
       <option value="update">Update</option>
       <option value="withdraw">Withdraw</option>
+
   type=hul.eresource &
     select
     id=cat
@@ -16,13 +20,16 @@ http://wally.hul.harvard.edu:8000/cgi-bin/ernie-prod.pl?
       <option value="hul.eother" >E-other</option>
       <option value="hul.EBKPLL" >E-bookplates - large image</option>
       <option value="hul.EBKPLT" >E-bookplates - thumbnail</option>
+
   unique_ID=HeinCCW &
     input type=text
+
   restricted=on &
     input type=checkbox
     (if unchecked, append https://login.eresources.law.harvard.edu/login?url= to url)
 
   URL= EncodeURIComponent( url ) &
+
   collection= &
     select
     values= 
