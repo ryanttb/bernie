@@ -4,6 +4,10 @@ $( function () {
     $( '#collection' ).parent( '.form-group' ).toggle( $( this ).val() === 'hul.ebook' );
   } );
 
+  $( '#restricted' ).click( function( ) {
+    $( '#prefix' ).parent( '.form-group' ).toggle( !$( this ).is( ':checked' ) );
+  } );
+
   getEmail();
 
   $( '#prepare' ).click( function( ) {
@@ -44,7 +48,7 @@ $( function () {
       if ( $( '#restricted' ).is( ':checked' ) ) {
         preparedHtml += '<td class="prepared-url">' + urlParts[ 1 ] + '</td>';
       } else {
-        preparedHtml += '<td class="prepared-url">https://login.eresources.law.harvard.edu/login?url=' + urlParts[ 1 ] + '</td>';
+        preparedHtml += '<td class="prepared-url">' + $( '#prefix' ).val() + urlParts[ 1 ] + '</td>';
       }
 
       preparedHtml += '<td class="prepared-urn">http://nrs.harvard.edu/urn-3:hul.eresource:' + urlParts[ 0 ] + '</td>';
