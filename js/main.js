@@ -51,7 +51,9 @@ $( function () {
         preparedHtml += '<td class="prepared-url">' + $( '#prefix' ).val() + urlParts[ 1 ] + '</td>';
       }
 
-      preparedHtml += '<td class="prepared-urn">http://nrs.harvard.edu/urn-3:hul.eresource:' + urlParts[ 0 ] + '</td>';
+      var type = $( '#type' ).val();
+
+      preparedHtml += '<td class="prepared-urn">http://nrs.harvard.edu/urn-3:' + type + ':' + ( type === 'hul.ebook' ? $( '#collection' ).val() + '_' : '' ) + urlParts[ 0 ] + '</td>';
 
       preparedHtml += '<td class="prepared-status">Unsubmitted</td>';
       preparedHtml += '</tr>';
