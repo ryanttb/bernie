@@ -39,6 +39,10 @@ $( function () {
       urlParts = this.split( '\t' );
 
       if ( urlParts.length !== 2 ) {
+        urlParts = this.split( ',' );
+      }
+
+      if ( urlParts.length !== 2 ) {
         return flash( 'Could not correctly parse all lines, please check your data and tap Prepare again' );
       }
 
