@@ -1,2 +1,2 @@
 # bernie
-Build create URNs via ERNIE
+Bulk create URNs via ERNIE
