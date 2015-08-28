@@ -56,7 +56,7 @@
           <label for="source" class="control-label">Source</label>
           <select name="source" id="source" class="form-control">
             <option value="" data-url="" data-selector="" selected></option>
-            <option value="beck" data-url="https://beck-online-beck-de.ezp-prod1.hul.harvard.edu/default.aspx" data-selector=".content a">Beck</option>
+            <option value="beck" data-url="scrape/beck.html" data-selector=".content a:not(.expander)">Beck</option>
           </select>
         </div>
 

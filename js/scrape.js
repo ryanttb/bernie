@@ -17,20 +17,14 @@ $( function () {
     if ( sourceVal ) {
       var source = sources[ sourceVal ];
 
-      var proxy = 'ba-simple-proxy.php';
-      var url = proxy + '?mode=native&send_cookies=1&send_session=1&url=' + encodeURIComponent( source.url );
-
-
-      /*
-      $.getJSON( url, function( data ) {
-        $( '#urls' ).val( JSON.stringify( data, null, 2 ) );
-      });
-      */
-
-
-
-      $.get( url, function( data ) {
-        $( '#urls').val( data );
+      $.get( sourceurl, function( data ) {
+        var csv = 'id\turl\ttext\n';
+        var $this;
+        $( data ).find( source.selector ).each( function( ) {
+          $this = $( this );
+          csv += $this.attr( 'name' ) + '\t' + $this.attr( 'href' ) + '\t' + $this.text() + '\n';
+        } );
+        $( '#urls' ).val( csv );
       } );
     }
 
