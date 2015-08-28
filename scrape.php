@@ -51,7 +51,7 @@
     <div class="container">
       <div id="prepare-flash" class="alert alert-warning" style="display: none;" role="alert"></div>
 
-      <form class="form-horizontal">
+      <form id="form-scrape" class="form-horizontal">
         <div class="form-group">
           <label for="source" class="control-label">Source</label>
           <select name="source" id="source" class="form-control">
@@ -60,19 +60,25 @@
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="source-url" class="control-label">Source URL</label>
-          <input type="text" id="source-url" value="" class="form-control"> 
+        <div class="well">
+          <div class="form-group">
+            <label for="source-url" class="control-label">Source URL</label>
+            <input type="text" id="source-url" value="" class="form-control"> 
+          </div>
+
+          <div class="form-group">
+            <label for="source-selector" class="control-label">Source Selector</label>
+            <input type="text" id="source-selector" value="" class="form-control"> 
+          </div>
         </div>
 
         <button id="go" type="submit" class="btn btn-primary">Scrape</button>
-
-        <div class="form-group">
-          <label for="urls" class="control-label" >Scraped URLs</label>
-          <textarea id="urls" class="form-control" rows="6"></textarea>
-        </div>
-
       </form>
+
+      <div class="form-group">
+        <label for="urls" class="control-label" >Scraped URLs</label>
+        <textarea id="urls" class="form-control" rows="6"></textarea>
+      </div>
     </div>
 
     <footer class="footer">
