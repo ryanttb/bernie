@@ -6,6 +6,7 @@ $( function () {
 
     if ( sourceVal ) {
       var source = sources[ sourceVal ];
+      $( '#source-prefix' ).val( source.prefix );
       $( '#source-url' ).val( source.url );
       $( '#source-selector' ).val( source.selector );
     }
@@ -17,12 +18,14 @@ $( function () {
     if ( sourceVal ) {
       var source = sources[ sourceVal ];
 
-      $.get( sourceurl, function( data ) {
+      $.get( source.url, function( data ) {
         var csv = 'id\turl\ttext\n';
         var $this;
         $( data ).find( source.selector ).each( function( ) {
           $this = $( this );
-          csv += $this.attr( 'name' ) + '\t' + $this.attr( 'href' ) + '\t' + $this.text() + '\n';
+          if ( $this.attr( 'href' ) ) {
+            csv += ( $this.attr( 'name' ) || '' ).trim() + '\t' + $this.attr( 'href' ).trim() + '\t' + ( $this.text() || '' ).trim() + '\n';
+          }
         } );
         $( '#urls' ).val( csv );
       } );
@@ -37,6 +40,7 @@ $( function () {
 
     if ( opt.attr( 'value' ) ) {
       sources[ opt.attr( 'value' ) ] = {
+        prefix: opt.data( 'prefix' ),
         url: opt.data( 'url' ),
         selector: opt.data( 'selector' )
       };
