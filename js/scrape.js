@@ -24,7 +24,7 @@ $( function () {
         $( data ).find( source.selector ).each( function( ) {
           $this = $( this );
           if ( $this.attr( 'href' ) ) {
-            csv += ( $this.attr( 'name' ) || '' ).trim() + '\t' + $this.attr( 'href' ).trim() + '\t' + ( $this.text() || '' ).trim() + '\n';
+            csv += ( $this.attr( 'name' ) || '' ).trim() + '\t' + ( $this.attr( 'href' ).indexOf( source.prefix ) < 0 ? source.prefix : '' ) + $this.attr( 'href' ).trim() + '\t' + ( $this.text() || '' ).trim() + '\n';
           }
         } );
         $( '#urls' ).val( csv );
