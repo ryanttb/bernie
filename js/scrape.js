@@ -4,6 +4,8 @@ $( function () {
   $( '#source' ).change( function() {
     var sourceVal = $( '#source' ).val();
 
+    $( '#source-prefix,#source-url,#source-selector' ).val( '' );
+
     if ( sourceVal ) {
       var source = sources[ sourceVal ];
       $( '#source-prefix' ).val( source.prefix );
