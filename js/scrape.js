@@ -26,7 +26,7 @@ $( function () {
         $( data ).find( source.selector ).each( function( ) {
           $this = $( this );
           if ( $this.attr( 'href' ) ) {
-            csv += ( $this.attr( 'name' ) || '' ).trim() + '\t' + ( $this.attr( 'href' ).indexOf( source.prefix ) < 0 ? source.prefix : '' ) + $this.attr( 'href' ).trim() + '\t' + ( $this.text() || '' ).trim() + '\n';
+            csv += ( getId( $this, sourceVal ) || '' ).trim() + '\t' + ( $this.attr( 'href' ).indexOf( source.prefix ) < 0 ? source.prefix : '' ) + $this.attr( 'href' ).trim() + '\t' + ( $this.text() || '' ).trim() + '\n';
           }
         } );
         $( '#urls' ).val( csv );
@@ -48,6 +48,15 @@ $( function () {
       };
     }
   } );
+
+  function getId( $item, sourceVal ) {
+    switch ( sourceVal ) {
+      case 'ibfd':
+        return $item.attr( 'href' ).split( '/' )[2];
+      default:
+        return $item.attr( 'name' );
+    }
+  }
 
   function flash( text ) {
     $( '#prepare-flash' ).text( text ).show()[ 0 ].scrollIntoView();
